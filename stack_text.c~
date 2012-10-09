@@ -1,0 +1,78 @@
+
+/*
+   Program to implement stack.
+   Input:stack elements
+   Output:push or pop operation
+   Date:5/10/2012
+*/
+#include<stdio.h>
+#define max_size 40
+int stack[max_size];
+int top=-1;
+void main() {
+
+  int choice;
+  while(1) {
+    printf("\n1. PUSH ");
+    printf("\n2. POP ");
+    printf("\n3. DISPLAY ");
+    printf("\n4. QUIT ");
+
+    printf("\nEnter your choice: ");
+    scanf("%d",&choice);
+
+    switch(choice) {
+       case 1:  push();
+                break;
+       case 2:  pop();
+                break;
+       case 3:  display();
+                break;
+       case 4:  exit(1);
+       default: printf("\nYou Entered Wrong Choice");
+    }
+
+   }
+ }
+
+
+void push() {
+
+  int top=-1;
+  int item;
+
+  if(top==max_size-1) {
+    printf("Stack is full!!!");
+  }
+
+  else {
+      printf("\nEnter the elements to be inserted: ");
+      scanf("%d",&item);
+      top=stack[item];
+      top=top+1;
+ }
+}
+
+void pop() {
+
+    int item;
+
+    if(top==-1) {
+        printf("Stack is empty!!!");
+    }
+    else {
+        printf("\nPopped item is %d: ",stack[top]);
+        top=top-1;
+    }
+}
+display()
+{
+int i;
+if(top==-1)
+ printf("Stack is empty!!!");
+else
+ {
+  printf("The stack elements are: ");
+  for(i=top;i>0;i--)
+  printf("%d\n",stack[i]);
+ }
